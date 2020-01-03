@@ -1,0 +1,19 @@
+.post-date {
+	background: #f4f4f4;
+	padding: 4px;
+	margin: 3px 0;
+}
+
+.post-category {
+	color: black;
+	font-size: .8em;
+	font-weight: 6	00;
+	background: rgba(251,149,54,0.3);
+	padding: 4px;
+	margin: 3px 0;
+}
+
+.cards-img {
+	width: 200px;
+	height: 100%;
+}
