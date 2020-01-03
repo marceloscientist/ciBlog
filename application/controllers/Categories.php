@@ -26,6 +26,11 @@
                redirect('categories');
            }
 
+       } 
+       
+       public function posts($id)
+       {
+           $data['title'] = $this->category_model->get_category($id)->name;
        }
    }
    

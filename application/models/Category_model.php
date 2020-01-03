@@ -18,6 +18,12 @@
 			$this->db->order_by('name');
 			$query = $this->db->get('categories');
 			return $query->result_array();
-		}
+        }
+        
+        public function get_category($id)
+        {
+            $query = $this->db->get_where('categories', array('id' => $id));
+            return $query->row();
+        }
     }
     
