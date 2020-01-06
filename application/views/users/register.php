@@ -1,11 +1,11 @@
 <br><br>
+<h1 class="text-center"><?php echo $title; ?></h1>
+<?php echo validation_errors(); ?>
+
 
 <div class="row">
     <div class="col-md-4 offset-md-4">
 
-
-<h2><?= $title; ?></h2>
-<?php echo validation_errors(); ?>
 
 <?php echo form_open('users/register'); ?>
     <div class="form-group">

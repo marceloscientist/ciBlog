@@ -18,7 +18,6 @@ class User_model extends CI_Model
     {
         $this->db->where('username', $username);
         $this->db->where('password', $password);
-
         $result = $this->db->get('users');
 
         if($result->num_rows() == 1) {
