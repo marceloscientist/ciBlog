@@ -14,11 +14,13 @@
 	<?php echo $post['body']; ?>
 </div>
 
-<hr>
-<a class="btn btn-success pull-left" href="edit/<?php echo $post['slug']; ?>">Edit</a>
-<?php echo form_open('posts/delete/'.$post['id']); ?>
-	<input type="submit" class="btn btn-danger" value="delete">
-</form>
+<?php if ($this->session->userdata('user_id') == $post['user_id']) : ?>
+  <hr>
+  <a class="btn btn-success pull-left" href="edit/<?php echo $post['slug']; ?>">Edit</a>
+  <?php echo form_open('posts/delete/'.$post['id']); ?>
+    <input type="submit" class="btn btn-danger" value="delete">
+  </form>
+<?php endif; ?>
 <hr>
 <h3>Add Comments</h3>
 <?php if($comments) : ?>

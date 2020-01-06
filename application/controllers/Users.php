@@ -41,14 +41,13 @@
             $user_id = $this->user_model->login($username, $password);
             
             if($user_id) {
-
                 $user_data = array( 
                     'user_id' => $user_id, 
                     'username' => $username,
                     'logged_in' => true
                 );
 
-                $this->session->set_userdata($username);
+                $this->session->set_userdata($user_data);
                 $this->session->set_flashdata('user_loggedin', 'You are now logged in');
                 redirect('posts');    
             } else {
@@ -56,10 +55,19 @@
                 redirect('users/login');
             }
         }
+
+
      }
 
 
-
+    public function logout()
+    {
+        $this->session->unset_userdata('user_id');
+        $this->session->unset_userdata('username');
+        $this->session->unset_userdata('logged_in');
+        $this->session->set_flashdata('user_loggedout', 'You are now logged out');
+        redirect('users/login');
+    }
 
 
 

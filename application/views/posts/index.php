@@ -3,9 +3,11 @@
     <p>
       <a class="btn btn-success" href="<?php echo site_url('/posts/create');  ?>">Create a Post</a>
     </p>
-
-
+  <div class="pagination-link">
+    <?php echo $this->pagination->create_links(); ?>
+  </div>
 <div class="list-group">
+
 <?php foreach ($posts as $post) : ?>
   <a href="#" class="list-group-item list-group-item-action flex-column align-items-start" >
     <div class="d-flex w-100 justify-content-between">
@@ -27,6 +29,8 @@
         </p>
 <?php endforeach; ?>
 </div>
-
+<div class="pagination-link">
+  <?php echo $this->pagination->create_links(); ?>
+</div>
 
 
